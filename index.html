@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Merriweather' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset Public domain -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr MIT license-->
+    <script type="text/javascript">
+    function updateOutput() {
+        //get form
+        var form = document.getElementById("calc");
+    //get output
+        var out = form.elements["z"];
+    //get two numbers
+        var num1 = parseInt(form.elements["x"].value);
+        var num2 = parseInt(form.elements["y"].value);
+        //get operator
+        var operator = parseInt(form.elements["op"].value);
+        //set output depending on operator
+        switch(operator) {
+          //add
+          case 0:
+          out.value = num1+num2;
+        	break;
+        	//subtract
+          case 1: out.value = num1-num2;
+          break;
+          //multiply
+          case 2: out.value = num1*num2;
+          break;
+          //divide
+          case 3: out.value = (num1/num2).toFixed(1);//only one digit after decimal place
+          break;
+          default:
+          break;
+        }
+     }
+    </script>
+    <script src="tablas/factores_tablas_ajustes.js"></script>
+	<title>Calculadora de impuestos</title>
+</head>
+<body>
+	<header class="cd-header" data-type="slider-item">
+		<h1>Calculadora de impuestos TTT</h1>
+	</header>
+	
+	<section class="cd-fixed-background img-1" data-type="slider-item">
+		<div class="cd-content">
+			<h2>Cálculos Básicos</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolor beatae, laudantium eos fugiat,     deserunt delectus quibusdam quae placeat, tempora ea? Nulla ducimus, magnam sunt repellendus modi, ad ipsam est.<br></p>
+              <form id="calc" oninput="updateOutput()">
+                <input name="x" type="number" value="0" />
+                  <select name="op" onchange="updateOutput()">
+	                <option value="0">+</option>
+	                <option value="1">-</option>
+	                <option value="2">x</option>
+	                <option value="3">/</option>
+                  </select>
+                <input name="y" type="number" value="0" />
+                <div class="equals"> = <output name="z" for="x y">0</output></div>
+              </form>
+
+		</div>
+	</section>
+
+	<section class="cd-fixed-background img-2" data-type="slider-item">
+		<div class="cd-content light-background">
+			<h2>Consulta de Factores de Ajuste</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolor beatae, laudantium eos fugiat, deserunt delectus quibusdam quae placeat, tempora ea? Nulla ducimus, magnam sunt repellendus modi, ad ipsam est.<br>
+
+              <form id="calc" oninput="updateOutput()">
+                <input name="x" type="number" value="0" />
+                  <select name="op" onchange="updateOutput()">
+	                <option value="0">0</option>
+	                <option value="1">1</option>
+	                <option value="2">2</option>
+	                <option value="3">3</option>
+                  </select>
+                <input name="y" type="number" value="0" />
+                <div class="equals"> = <output name="z" for="x y">0<br></output></div>
+              </form><hr> 
+
+             <div><button type="button" onclick="getFactorAjusteConstruccion(0)">Factor Ajuste Construccion 0</button></div>
+             <div><button type="button" onclick="getFactorAjusteConstruccion(1)">Factor Ajuste Construccion 1</button></div><hr>
+             <div><button type="button" onclick="getFactorINPCTerreno(19691)">Factor INPC Terreno 19691</button></div>
+             <div><button type="button" onclick="getFactorINPCTerreno(196910)">Factor INPC Terreno 196910</button></div>
+             <div><button type="button" onclick="getFactorINPCTerreno(20219)">Factor INPC Terreno 20219</button></div><br>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolor beatae, laudantium eos fugiat, deserunt delectus quibusdam quae placeat, tempora ea? Nulla ducimus, magnam sunt repellendus modi, ad ipsam est.<br></p>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="2SDK7G9C3S2DG">
+                <table>
+                <tr><td><input type="hidden" name="on0" value="Tipos_Impuesto">Cálculos de Impuestos con cargo</td></tr><tr><td><select name="os0">
+	                <option value="Afore">Afore $200.00 MXN</option>
+	                <option value="Infonavit">Infonavit $300.00 MXN</option>
+	                <option value="Predial">Predial $400.00 MXN</option>
+                </select> </td></tr>
+                </table>
+                <input type="hidden" name="currency_code" value="MXN">
+                <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+                <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+                </form>
+            </p>
+
+        </div>
+	</section>
+
+	<section class="cd-fixed-background img-3" data-type="slider-item">
+		<div class="cd-content">
+			<h2>Cálculos Especializados de Impuestos y Atención Personal</h2>
+            <p>Si usted necesita alguna consulta más especializada, no dude en contactarnos:
+            <a  href="mailto:Francisco.Trevino@zoho.com?subject=Atención_Personalizada&body=Quiero Más Info, añada su comprobante de pago paypal">Francisco Tre</a>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="3AGF4A87C7WTG">
+            <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+            <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+            </form></p>
+		</div>
+	</section>
+
+	<section class="cd-fixed-background img-4" data-type="slider-item">
+		<div class="cd-content">
+			<h2>Tre Think Tank</h2>
+			<p>Ciencia y Tecnología: Soluciones y Propuestas Técnicas Multidisciplinarias.</p>
+		</div>
+	</section>
+
+	<nav>
+		<ul class="cd-vertical-nav">
+			<li><a href="#0" class="cd-prev inactive">Next</a></li>
+			<li><a href="#0" class="cd-next">Prev</a></li>
+		</ul> <!-- cd-vertical-nav -->
+	</nav>
+    
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/main.js"></script> <!-- Resource jQuery -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.2.6/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/8.2.6/firebase-analytics.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+</body>
+</html>
